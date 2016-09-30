@@ -17,16 +17,15 @@
 		<p><span class="spanHead">My name is Duke. What is yours?</span></p>
 		<br/><br/>
 		<form>
-			<input type="text" name="nameTb">
+			<input type="text" id="nameTb" name="nameTb">
 			<input type="submit" value="Submit"/>
 			<input type="reset"/>
 		</form>
 		<br/><br/>
 		<%
-		System.out.println(request.getAttribute("name"));
 		if (request.getAttribute("name") != null) {
 		%>
-		<span class="spanHead">Hello, <%= request.getAttribute("name") %></span>
+		<span class="spanHead">Hello, <%= request.getAttribute("name") %>!</span>
 		<%} %>
 	</div>
 	<footer>&copy; ${initParam.footer }</footer>

@@ -28,14 +28,12 @@ public class RegisteredNameFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		System.out.println("Filter working");
+		System.out.println("Filter called by index.jsp");
 		
 		String path = filterConfig.getServletContext().getInitParameter("duke");
-		System.out.println(path);
 		
-		String name;
-		if (request.getParameter("nameTb") != null && !request.getParameter("nameTb").trim().isEmpty()) {
-			name = request.getParameter("nameTb");
+		String name = request.getParameter("nameTb");
+		if (name != null && !name.trim().isEmpty()) {
 			if (filterConfig.getServletContext().getInitParameter(name) != null && !filterConfig.getServletContext().getInitParameter(name).trim().isEmpty()) {
 				name = name.trim().toLowerCase();
 				path = filterConfig.getServletContext().getInitParameter(name);
