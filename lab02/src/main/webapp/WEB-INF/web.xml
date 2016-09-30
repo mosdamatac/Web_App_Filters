@@ -1,0 +1,43 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <context-param>
+  		<param-name>author</param-name>
+  		<param-value>Mara Damatac, A00973641</param-value>
+  	</context-param>
+  	<context-param>
+  		<param-name>course</param-name>
+  		<param-value>COMP 4613</param-value>
+  	</context-param>
+  	<context-param>
+  		<param-name>footer</param-name>
+  		<param-value>A00973641 Mara 2016</param-value>
+  	</context-param>
+  	
+  	<!-- images for registered names-->
+  	 <context-param>
+  	 	<param-name>duke</param-name>
+  		<param-value>/images/duke.waving.gif</param-value>
+  	 </context-param>
+  	 <context-param>
+  	 	<param-name>homer</param-name>
+  	 	<param-value>/images/homer.png</param-value>
+  	 </context-param>
+  	 <context-param>
+  	 	<param-name>bart</param-name>
+  	 	<param-value>/images/bart.gif</param-value>
+  	 </context-param>
+  	
+  	<servlet>
+  		<servlet-name>index</servlet-name>
+  		<jsp-file>/index.jsp</jsp-file>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>index</servlet-name>
+  		<url-pattern>/index.jsp</url-pattern>
+  	</servlet-mapping>
+</web-app>
