@@ -34,15 +34,16 @@ public class RegisteredNameFilter implements Filter {
 		
 		String name = request.getParameter("nameTb");
 		if (name != null && !name.trim().isEmpty()) {
-			if (filterConfig.getServletContext().getInitParameter(name) != null && !filterConfig.getServletContext().getInitParameter(name).trim().isEmpty()) {
-				name = name.trim().toLowerCase();
-				path = filterConfig.getServletContext().getInitParameter(name);
-				request.setAttribute("name", name);
-			}					
+			name = name.trim();			
+			if (filterConfig.getServletContext().getInitParameter(name.toLowerCase()) != null) {
+				path = filterConfig.getServletContext().getInitParameter(name.toLowerCase());
+			}
+			
+			request.setAttribute("name", name);
 		}	
 		
 		request.setAttribute("imgPath", path);
-		
+
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
 	}

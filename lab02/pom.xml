@@ -22,5 +22,19 @@
   </dependencies>
   <build>
   	<finalName>lab02</finalName>
+  	<plugins>
+  	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-war-plugin</artifactId>
+		<configuration>
+			<webResources>
+				<resource>
+					<directory>${build.sourceDirectory}</directory> OR ${project.build.sourceDirectory}
+					<targetPath>WEB-INF\classes</targetPath>
+				</resource>
+			</webResources>
+		</configuration>
+	</plugin>
+  	</plugins>
   </build>
 </project>
